@@ -1,0 +1,139 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Nunito", sans-serif;
+  outline: none;
+}
+
+/* VARIABLES */
+body {
+  background: #e93c36;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row wrap;
+  height: 10vh;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  background: #c2ce28;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin-right: 40px;
+}
+
+#logo {
+  height: 75%;
+  margin-left: 40px;
+}
+
+.card-boundle {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 0px auto;
+  width: 80%;
+  margin-top: 20px;
+  z-index: 0;
+}
+.card-boundle .card {
+  background: white;
+  border-radius: 15px;
+  /*         box-shadow: 0px 35px 30px rgba(90, 23, 23, 0.349);
+   */
+  width: 18vw;
+  min-width: 230px;
+}
+.card-boundle .card img {
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+}
+.card-boundle .card h2 {
+  color: grey;
+  font-size: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.card-boundle .card span {
+  padding-left: 25px;
+  color: grey;
+  font-weight: 800;
+  font-size: 15px;
+}
+.card-boundle .card hr {
+  margin: 20px;
+  border-style: none;
+  border: 1px solid rgba(128, 128, 128, 0.171);
+}
+.card-boundle .card .shop-form {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.card-boundle .card select {
+  width: 100%;
+  border-style: none;
+  border-bottom: 2px solid #dedede;
+  border-top: 2px solid #dedede;
+  color: gray;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  padding-left: 5px;
+  outline: none;
+}
+.card-boundle .card button {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #e93c36;
+  border-style: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+  font-weight: 800;
+  transition: all 300ms;
+  justify-content: flex-end;
+}
+.card-boundle .card button:hover {
+  background: #5c1818;
+}
+
+#comprar {
+  display: block;
+  margin: 0px auto;
+  width: 76%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #c2ce28;
+  border-style: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+  font-weight: 800;
+  transition: all 300ms;
+}
+
+#comprar:hover {
+  background: #196926;
+}
+
+/*# sourceMappingURL=index.css.map */
