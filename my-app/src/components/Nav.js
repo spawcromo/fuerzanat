@@ -1,19 +1,39 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+/* import { Link } from 'react-router-dom' */
 
 export const Nav = () => {
+
+    const cart = useSelector(state => state.cart)
+    const { cartItems } = cart;
+
+
+
     return (
-        <div className="nav">
-            
-            <img id="logo" alt="logo" className='animate__animated animate__backInDown' src="../img/logo.png" />
+        <div className="nav animate__animated animate__zoomIn">
 
-            <ul className="animate__animated animate__backInRight animate__delay-2s">
-                <li><a href="#"><img src="../img/user.png" /></a></li>
-                <li><a href="#"><img src="../img/cart.png"/></a></li>
-            </ul>
+            <a href='/'>
+                <img id="logo" alt="logo" className='animate__animated animate__backInDown' src="../img/logo.png" />
+            </a>
 
+            <div className="iconos">
 
 
+                <a className="cart" href="/cart"><img src="../img/cart.png" alt="cart-icon" />
+                    {cartItems.length > 0 && <span className="badge">{cartItems.length}</span>}
+                </a>
 
-        </div>
+
+                <a className="cart" href="/login"><img src="../img/user.png" alt="user-icon" /></a>
+
+            </div>
+
+
+
+
+
+        </div >
     )
 }
+
+/* className="animate__animated animate__backInRight animate__delay-2s" */

@@ -1,42 +1,59 @@
-
+import bcrypt from 'bcryptjs';
 const data = {
+    users: [
+        {
+            name: "Pichu",
+            email: "aguferberna@gmail.com",
+            password: bcrypt.hashSync('1234', 8),
+            isAdmin: true,
+
+        },
+        {
+            name: "Jhony",
+            email: "user@example.com",
+            password: bcrypt.hashSync('1234', 8),
+            isAdmin: false,
+
+        },
+
+    ],
     products: [
         {
-            id: '1',
-            name: 'Tarta de choclo',
+            
+            name: 'Tarta de choclo x1',
             category: 'Tartas',
             image: '../img/1.jpg',
-            price: ['120','150','190'],
-            quant: ['3','6','9']
+            price: 120,
+           
 
         },
         {
-            id: '2',
-            name: 'Prepizza integral',
+            
+            name: 'Prepizza integral x1',
             category: 'Pizzas',
             image: '../img/2.jpg',
-            price: ['100','200','300'],
-            quant: ['3','6','9']
+            price: 140,
+           
 
         },
         {
-            id: '3',
-            name: 'Milanesas de berenjena',
+           
+            name: 'Milanesas de berenjena x500g',
             category: 'Milanesas',
             image: '../img/3.jpg',
-            price: ['150','250','300'],
-            quant: ['x200g','x500g','x1kg']
+            price: 170,
+         
 
         },
         {
-            id: '4',
-            name: 'Ñoquis de verdura',
+           
+            name: 'Ñoquis de verdura x500g',
             category: 'Pastas',
             image: '../img/4.jpg',
-            price: ['190','250','350'],
-            quant: ['x200g','x500g','x1kg']
+            price: 200,
+    
 
-        },
+        }        
     ],
 };
 

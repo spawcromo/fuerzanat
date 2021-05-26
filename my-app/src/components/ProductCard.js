@@ -1,44 +1,79 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../actions/cartActions';
+
+
 
 export const ProductCard = ({ product }) => {
 
-    const [qty, setQty] = useState(product.price[0])
+    const [qty, setQty] = useState(1)
 
-    
-    
-    console.log(product)
+    //USEEFFECT PARA LA ANIMACION DE LA TARJETA
+
+    useEffect(() => {
+
+        Aos.init({
+
+            duration: 1500
+
+        });
+
+    }, []);
+
+
+
+    const dispatch = useDispatch();
+    const agregar = ()=>{
+
+        dispatch(addToCart(product._id, qty))
+
+    }
+
+    console.log(product._id)
 
     return (
 
         <>
             {
+                /*  animate__animated animate__backInDown animate__delay-1s */
+                <div data-aos="fade-up"
+                    className="card ">
+                    
                 
-                <div className="card">
-
                     <img src={product.image} alt={product.name} />
+
+            
 
                     <h2>{product.name}</h2>
 
-                    <span>$ {qty}</span>
+                    <span>$ {qty * product.price}</span>
 
-                    <form className="shop-form">
+                    <div className="shop-form">
 
-                    <select onChange={(e) => {
-                        const seleccion = e.target.value;
-                        setQty(seleccion);
-                    }} name="select">
+                        <select onChange={(e) => {
+                            const seleccion = e.target.value;
+                            setQty(seleccion);
+                        }} name="select">
 
-                        <option value={product.price[0]}>{product.quant[0]}</option>
-                        <option value={product.price[1]}>{product.quant[1]}</option>
-                        <option value={product.price[2]}>{product.quant[2]}</option>
+                            <option key={1} value={1}>1</option>
+                            <option key={2} value={2}>2</option>
+                            <option key={3} value={3}>3</option>
+                            <option key={4} value={4}>4</option>
+                            <option key={5} value={5}>5</option>
+                            <option key={6} value={6}>6</option>
 
 
-                    </select>
+                        </select>
 
 
-                    <button>Agregar</button>
+                        <button onClick={agregar} key={product.id}>Agregar</button>
 
-                    </form>
+                    </div>
+
+                    
 
                 </div>
             }

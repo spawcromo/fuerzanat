@@ -3,8 +3,13 @@ import { Nav } from './components/Nav';
 import { BrowserRouter, Route } from 'react-router-dom'
 import  HomeScreen from './screens/HomeScreen'
 import  ProductScreen  from './screens/ProductScreen'
-import { Comprar } from './components/Comprar';
+import  CartScreen  from './screens/CartScreen';
+
+
+
 function App() {
+
+
 
 
   return (
@@ -12,11 +17,14 @@ function App() {
     <>
 
       <BrowserRouter>
-
       <Nav />
-      <Route path="/product:id" component={ProductScreen}></Route>
+      
+
+      <Route path="/cart/:id?" component={CartScreen}></Route>
+      <Route path="/product/:id" component={ProductScreen}></Route>
       <Route path="/" component={HomeScreen} exact></Route>
-      <Comprar />
+      
+      
       
 
       </BrowserRouter>
