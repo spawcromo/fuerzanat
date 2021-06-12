@@ -26,7 +26,7 @@ export const ProductCard = ({ product }) => {
 
 
     const dispatch = useDispatch();
-    const agregar = ()=>{
+    const agregar = () => {
 
         dispatch(addToCart(product._id, qty))
 
@@ -38,18 +38,18 @@ export const ProductCard = ({ product }) => {
 
         <>
             {
-                /*  animate__animated animate__backInDown animate__delay-1s */
+
                 <div data-aos="fade-up"
                     className="card ">
-                    
-                
+
+
                     <img src={product.image} alt={product.name} />
 
-            
+
 
                     <h2>{product.name}</h2>
 
-                    <span>$ {qty * product.price}</span>
+
 
                     <div className="shop-form">
 
@@ -68,12 +68,13 @@ export const ProductCard = ({ product }) => {
 
                         </select>
 
+                        <div className="pricing">$ {qty * product.price}</div>
 
                         <button onClick={agregar} key={product.id}>Agregar</button>
 
                     </div>
 
-                    
+
 
                 </div>
             }

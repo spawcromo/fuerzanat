@@ -31,7 +31,7 @@ export function GenerateCards() {
 
             {products.map((product) => {
               return (
-                <ProductCard product={product} key={product.id} />
+                <ProductCard product={product} key={product._id} />
               )
             })}
 

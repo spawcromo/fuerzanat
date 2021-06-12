@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { addToCart, removeFromCart } from '../actions/cartActions';
-import { Link } from 'react-router-dom';
+
 import { useDispatch, useSelector } from 'react-redux';
 
 
 
-export const ProductCartScreen = ({ item }) => {
+export const ProductCardCart = ({ item }) => {
 
     const cart = useSelector(state => state.cart)
     const { cartItems } = cart;
@@ -28,17 +28,18 @@ export const ProductCartScreen = ({ item }) => {
     return (
         <>
 
-            <li key={item.product}>
+            <div className="card-cart" key={item.product}>
 
-                <div>
-                    <img src={item.image} alt={item.name} className="mini"/>
+                <div className="div-img">
+                    <img src={item.image} alt={item.name} className="mini" />
                 </div>
 
-                <div>
-                    <Link to={`/product/${item.product}`}>{item.name}</Link>
-                </div>
 
-                <div>
+                <h2>{item.name}</h2>
+
+
+                <div className="shop-form">
+
                     <select value={item.qty} name="select" onChange={e => {
 
                         dispatch(
@@ -61,33 +62,29 @@ export const ProductCartScreen = ({ item }) => {
 
 
                     </select>
-                </div>
 
-                <div>
+                    <div className="pricing">${qty2 ? (item.price * qty2) : (item.price * qty)}</div>
 
-                    ${qty2 ? (item.price * qty2) : (item.price * qty)}
-
-
-
-
-                </div>
-
-                <div>
                     <button type="button" onClick={() => removeFromCartHandler(item.product)}>
                         Delete
                      </button>
+
+
                 </div>
 
 
-                
 
 
-            </li>
+
+
+
+
+            </div>
 
 
 
         </>
-        
+
     )
-   
+
 }
